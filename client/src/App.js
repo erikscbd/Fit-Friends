@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <div className='homepage'>
-        {/* <Home /> */}
+        <Home />
       </div>
       <div className='login-page'>
         {/* <Login /> */}
