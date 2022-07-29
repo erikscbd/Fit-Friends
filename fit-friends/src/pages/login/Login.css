@@ -1,0 +1,145 @@
+.logo-top-container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: black;
+    height: 120px;
+    border-top: solid rgb(125, 249, 255) 20px;
+
+}
+
+.logo-img {
+
+    align-items: center;
+    justify-content: center;
+}
+
+.ff-logo {
+    width: 300px;
+}
+
+
+
+/* .login-title {
+    color: white;
+    font-size: 50px;
+    margin-bottom: 70px
+} */
+
+.login-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+    height: 675px;
+
+}
+
+.login-form {
+    border: solid rgb(125, 249, 255) 3px;
+    border-radius: 20px;
+    height: 500px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 25px;
+    background-color: black;
+}
+
+.login-form-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+
+.form-input {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.enter-info {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    background-color: white;
+    /* color: white; */
+    /* border: solid 1px white; */
+    border-radius: 7px;
+    margin-top: 15px;
+    font-size: 20px;
+
+}
+
+
+
+.sign-in-title {
+
+
+    display: block;
+    color: white;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.sign-up-prompt {
+   display: flex;
+   flex-direction: row;
+   margin-top: 15px;
+}
+
+.sign-up-prompt span {
+    color: #DFFF00;
+    text-decoration: underline;
+}
+
+
+.login-btn {
+background-color: rgb(125, 249, 255);
+color: black;
+border: 3px rgb(125, 249, 255) solid;
+border-radius: 7px;
+height: 40px;
+width: 80px;
+font-size: 22px;
+margin-top: 10px;
+/* font-weight: bold; */
+margin-bottom: 10px;
+}
+
+
+footer {
+    background-color: rgb(125, 249, 255) ;
+    height: 60px;    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border-bottom: solid rgb(125, 249, 255) 15px; */
+
+}
+
+
+
+
+
+
+.footer-logo {
+    width: 175px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
