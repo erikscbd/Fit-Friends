@@ -23,7 +23,7 @@ const Home = () => {
                             title="Here's how your friends are getting fit..."
                         />
                     )}
-                </div>
+                </div> 
             </div>
         </main>
     );

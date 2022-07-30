@@ -15,6 +15,10 @@ import Login from './pages/login/Login';
 import Signup from './pages/signup/SignUp';
 import Profile from './pages/profile/Profile';
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
