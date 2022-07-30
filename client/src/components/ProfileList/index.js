@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./ProfilesList.css";
+import "./ProfileList.css";
 
 const ProfileList = ({ profiles, title }) => {
     if (!profiles.length) {
