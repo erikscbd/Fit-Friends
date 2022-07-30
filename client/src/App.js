@@ -1,47 +1,74 @@
 // import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import React from 'react';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/SignUp';
 import Profile from './pages/profile/Profile';
 
 
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 
 function App() {
   return (
-    <div>
-      <div className='homepage'>
-        <Home />
-      </div>
-      <div className='login-page'>
-        {/* <Login /> */}
-      </div>
-      <div className='sign-up-page'>
-        {/* <Signup /> */}
-      </div>
-      <div className='profile-page'>
-        {/* <Profile /> */}
-      </div>
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="header">
+          <Header />
+          <div className="header-container">
+            <Routes>
+              <Route
+                path="/"
+                element={<Home />}
+              />
+              <Route
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path="/signup"
+                element={<Signup />}
+              />
+              <Route
+                path="/me"
+                element={<Profile />}
+              />
+              <Route
+                path="/profiles/:profileId"
+                element={<Profile />}
+              />
 
-
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 

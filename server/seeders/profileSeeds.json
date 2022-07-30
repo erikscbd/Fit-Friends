@@ -1,0 +1,8 @@
+{
+    "name": "Ashley Albertson",
+    "email": "ashley@gmail.com",
+    "username": "ashbash777",
+    "password": "password01",
+    "calories": [100, 250, 500, 400, 90],
+    "workouts": ["walked 5 miles", "lifted weights"]
+}
