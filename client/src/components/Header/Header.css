@@ -1,0 +1,82 @@
+.logo-top-container {
+    /* flex: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: black;
+    /* color:#DFFF00; */
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 120px;
+    border-top: solid rgb(125, 249, 255) 25px;
+
+}
+
+.logo-img {
+
+    align-items: center;
+    justify-content: center;
+}
+
+.ff-logo {
+    width: 300px;
+}
+
+.selection-container {
+
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; */
+    background-color: black;
+    /* margin-bottom: 300px; */
+    /* background-color: rgb(125, 249, 255); */
+
+}
+
+.selection-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: row;
+    justify-content: space-evenly;
+    padding: 50px;
+     */
+
+
+}
+
+button {
+    display: flex;
+    /* flex-direction: row; */
+    margin: 30px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    /* font-weight: bold; */
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    /* border: solid 2px white; */
+    border: solid rgb(125, 249, 255) 3px;
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 5px 2px #DFFF00 */
+
+
+}
+
+/* .hero-container {
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+} */
+
+.logo-container {
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
