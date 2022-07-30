@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import './FoodEntryForm.css';
-import { ADD_FOOD_INTAKE } from '../../utils/mutations';
+import { ADD_FOOD_ENTRY } from '../../utils/mutations';
 
 
 import Auth from '../../utils/auth';
