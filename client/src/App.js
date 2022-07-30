@@ -14,6 +14,12 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/SignUp';
 import Profile from './pages/profile/Profile';
+import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
+
+const httpLink = createHttpLink ({
+  uri: '/graphql',
+});
 
 
 const authLink = setContext((_, { headers }) => {
@@ -36,6 +42,8 @@ const client = new ApolloClient({
 
 function App() {
   return (
+
+    // allows us to call us query and use mutation hooks
     <ApolloProvider client={client}>
       <Router>
         <div className="header">
