@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/erikscbd/Fit-Friends/issues"
   },
-  "homepage": "https://github.com/erikscbd/Fit-Friends#readme"
+  "homepage": "https://github.com/erikscbd/Fit-Friends#readme",
+  "dependencies": {
+    "mongoose": "^6.5.0"
+  }
 }
