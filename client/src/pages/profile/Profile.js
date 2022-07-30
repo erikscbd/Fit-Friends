@@ -18,7 +18,7 @@ import FoodEntryForm from '../../components/FoodEntryForm';
 
 // import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
 
-import Auth from '../utils/auth';
+import Auth from '../../utils/auth';
 
 const Profile = () => {
     const { profileId } = useParams();

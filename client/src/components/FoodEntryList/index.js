@@ -2,7 +2,7 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 
 import { REMOVE_SKILL } from '../../utils/mutations';
-import { QUERY_ME } from '../../utils/queries';
+// import { QUERY_ME } from '../../utils/queries';
 // import '../FoodEntryForm';
 
 
