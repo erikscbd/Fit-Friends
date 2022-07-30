@@ -19,3 +19,23 @@ export const REMOVE_FOOD_ENTRY = gql`
     }
   }
 `;
+
+export const ADD_WORKOUT = gql`
+mutation addWorkout($profileId: ID!, $workout: String!) {
+  addWorkout(profileId: $profileId, workout: $workout) {
+    _id
+    name
+    workouts
+  }
+}
+`;
+
+export const REMOVE_WORKOUT = gql`
+mutation removeWorkout($workout: String!) {
+  removeWorkout(workout: $workout) {
+    _id
+    name
+    workouts
+  }
+} 
+`
