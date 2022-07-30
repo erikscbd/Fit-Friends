@@ -4,9 +4,9 @@ import "./Home.css";
 // import logo2 from "../../img/logo2.png";
 import { useQuery } from '@apollo/client';
 
-import ProfileList from '../components/ProfileList';
+import ProfileList from '../../components/ProfileList';
 
-import { QUERY_PROFILES } from '../utils/queries';
+// import { QUERY_PROFILES } from '../utils/queries';
 
 const Home = () => {
     const { loading, data } = useQuery(QUERY_PROFILES);

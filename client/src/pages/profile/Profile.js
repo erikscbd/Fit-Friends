@@ -9,14 +9,14 @@ import "./Profile.css";
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import CalorieList from '../components/CaloriesList';
-import CalorieForm from '../components/CaloriesForm';
-import WorkoutList from '../components/WorkoutsList';
-import WorkoutForm from '../components/WorkoutsForm';
-import WorkoutSchedule from '../components/WorkoutSchedule';
-import WorkoutScheduleForm from '../components/WorkoutScheduleForm';
+import FoodEntryList from '../../components/FoodEntryList';
+import FoodEntryForm from '../../components/FoodEntryForm';
+// import WorkoutList from '../components/WorkoutsList';
+// import WorkoutForm from '../components/WorkoutsForm';
+// import WorkoutSchedule from '../components/WorkoutSchedule';
+// import WorkoutScheduleForm from '../components/WorkoutScheduleForm';
 
-import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
+// import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
