@@ -20,6 +20,16 @@ export const REMOVE_FOOD_ENTRY = gql`
   }
 `;
 
+export const LOGIN_USER = gql`
+mutation login($email: String!, $username: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+    profile {
+      _id
+      name
+    }
+  }
+}`;
 export const ADD_WORKOUT = gql`
 mutation addWorkout($profileId: ID!, $workout: String!) {
   addWorkout(profileId: $profileId, workout: $workout) {

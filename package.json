@@ -2,7 +2,7 @@
   "name": "fit-friends",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/erikscbd/Fit-Friends#readme",
   "dependencies": {
+    "concurrently": "^7.3.0",
     "mongoose": "^6.5.0"
   }
 }
