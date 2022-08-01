@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import { REMOVE_WORKOUT } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
 
-const WorkoutList = ({ workouts, isLoggedInUser = false  }) => {
+const WorkoutList = ({ workouts, isLoggedInUser  }) => {
     const [removeWorkout, { error }] = useMutation(REMOVE_WORKOUT, {
         update(cache, { data: {removeWorkout } }) {
           try {

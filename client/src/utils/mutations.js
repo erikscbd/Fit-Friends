@@ -14,7 +14,7 @@ export const REMOVE_FOOD_ENTRY = gql`
   mutation removeFoodEntry ($foodEntry: String!) {
     removeFoodEntry(foodEntry: $foodEntry) {
       _id
-      name
+      username
       foodEntries
     }
   }
