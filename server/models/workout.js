@@ -1,44 +1,33 @@
-const { Schema, model } = require('mongoose').Schema;
+const { Schema, model} = require('mongoose');
 const moment = require('moment');
 
-const commentsSchema = new Schema(
+const workoutSchema = new Schema(
     {
-        commentId:{
-            type: Schema.Types.ObjectId,
-            default: () => new Types.ObjectId()
-        },
-        reactionBody: {
+        workoutText: {
             type: String,
             required: true,
-            maxlength: 280
+            max: 100,
         },
-        userId: {
-            type: Schema.Types.ObjectId,
-            ref: 'Profile'
-        },
+
         createdAt: {
             type: Date,
             default: Date.now,
             get: createdVal => moment(createdVal).format('MMM DD, YYYY [at] hh:mm a')
-        }
-    })
+        },
 
-const workoutSchema = new Schema({
-    exercise: {
-        type: String,
-        required: true,
-        unique: false,
-        trim: false,
-        minlength: 1,
-        maxlength: 255
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-        get: createdVal => moment(createdVal).format('MMM DD, YYYY [at] hh:mm a')
-    },
-    comments: [commentsSchema],
-})
+        username: {
+            type: String,
+            required: true,
+        },
+
+    }
+);
+
+
+
+
 
 
 const Workout = model('Workout', workoutSchema);
+
+module.exports = Workout;

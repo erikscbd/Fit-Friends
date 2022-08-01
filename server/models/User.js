@@ -1,17 +1,20 @@
 const { Schema, model } = require('mongoose');
 
 
-const profileSchema = new Schema({
-    name: { 
+const userSchema = new Schema({
+    username: {
         type: String,
         required: true,
         unique: true,
-        trim: true
+        trim: true,
+        min: 7,
+        max: 15,
     },
     email: {
         type: String,
         required: true,
         unique: true,
+        trim: true,
         match: [/.+@.+\..+/, 'Must match an email address!']
     },
     password: {
@@ -22,28 +25,28 @@ const profileSchema = new Schema({
     friends: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Profile'
+            ref: 'User'
         }
     ],
-    workouts: [
-        {
+    workouts:
+    {
         type: Schema.Types.ObjectId,
         ref: 'Workout'
-        }
-    ],
-    calories: {
-        type: Number,
-        default: 0
-    }
+    },
+
+    foodEntries: {
+        type: Schema.Types.ObjectId,
+        ref: 'FoodEntry'
+    },
 
 });
 
 
-profileSchema.virtual('friendCount').get(function() {
+userSchema.virtual('friendCount').get(function () {
     return this.friends?.length;
 });
 
-profileSchema.pre('save', async function (next) {
+userSchema.pre('save', async function (next) {
     if (this.isNew || this.isModified('password')) {
         const saltRounds = 10;
         this.password = await bcrypt.hash(this.password, saltRounds);
@@ -52,12 +55,12 @@ profileSchema.pre('save', async function (next) {
     next();
 });
 
-profileSchema.method.isCorrectPassword = async function (password) {
+userSchema.method.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
 
-const Profile = model('Profile', profileSchema);
+const User = model('User', userSchema);
 
 
-module.exports = Profile;
+module.exports = User;
