@@ -115,7 +115,7 @@ const resolvers = {
         },
         // DELETE WORKOUT 
         // Make it so a logged in user can only delete a workout from their own profile
-        deleteFoodEntry: async (parent, { workout }, context) => {
+        deleteWorkoutEntry: async (parent, { workout }, context) => {
             if (context.user) {
                 return Profile.findOneAndUpdate(
                     { _id: context.user._id },
