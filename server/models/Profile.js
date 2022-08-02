@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 
-const userSchema = new Schema({
+const profileSchema = new Schema({
     username: {
         type: String,
         required: true,
@@ -21,32 +21,34 @@ const userSchema = new Schema({
         type: String,
         required: true,
         minlength: 5,
+        unique: true,
     },
     friends: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'User'
+            ref: 'Profile'
         }
     ],
-    workouts:
-    {
-        type: Schema.Types.ObjectId,
-        ref: 'Workout'
-    },
 
-    foodEntries: {
-        type: Schema.Types.ObjectId,
-        ref: 'FoodEntry'
-    },
+    workouts:[
+    {
+        type: String,
+        ref: 'Workout'
+    }],
+
+    foodEntries: [{
+        type: Object,
+        ref: 'Food'
+    }],
 
 });
 
 
-userSchema.virtual('friendCount').get(function () {
+profileSchema.virtual('friendCount').get(function () {
     return this.friends?.length;
 });
 
-userSchema.pre('save', async function (next) {
+profileSchema.pre('save', async function (next) {
     if (this.isNew || this.isModified('password')) {
         const saltRounds = 10;
         this.password = await bcrypt.hash(this.password, saltRounds);
@@ -55,12 +57,12 @@ userSchema.pre('save', async function (next) {
     next();
 });
 
-userSchema.method.isCorrectPassword = async function (password) {
+profileSchema.method.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
 
-const User = model('User', userSchema);
+const Profile = model('Profile', profileSchema);
 
 
-module.exports = User;
+module.exports = Profile;

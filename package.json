@@ -23,6 +23,7 @@
   "homepage": "https://github.com/erikscbd/Fit-Friends#readme",
   "dependencies": {
     "concurrently": "^7.3.0",
+    "moment": "^2.29.4",
     "mongoose": "^6.5.0"
   }
 }
