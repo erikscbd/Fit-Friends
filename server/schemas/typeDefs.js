@@ -21,6 +21,15 @@ const typeDefs = gql`
     me: Profile
   }
 
+  type workout{
+    id: ID!
+    workoutText: string
+  }
+
+  type workoutInput{
+    workoutText: string
+  }
+
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
