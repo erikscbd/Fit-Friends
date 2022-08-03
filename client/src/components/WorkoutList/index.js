@@ -5,28 +5,28 @@ import { REMOVE_WORKOUT } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
 
 const WorkoutList = ({ workouts, isLoggedInUser  }) => {
-    const [removeWorkout, { error }] = useMutation(REMOVE_WORKOUT, {
-        update(cache, { data: {removeWorkout } }) {
-          try {
-            cache.writeQuery({
-                query: QUERY_ME,
-                data: { me: removeWorkout },
-            });
-          }  catch (e) {
-            console.error(e);
-          }
-        },
-    });
+    // const [removeWorkout, { error }] = useMutation(REMOVE_WORKOUT, {
+    //     update(cache, { data: {removeWorkout } }) {
+    //       try {
+    //         cache.writeQuery({
+    //             query: QUERY_ME,
+    //             data: { me: removeWorkout },
+    //         });
+    //       }  catch (e) {
+    //         console.error(e);
+    //       }
+    //     },
+    // });
 
-    const handleRemoveWorkout = async (workout) => {
-        try {
-            const { data } = await removeWorkout({
-                variables: { workout },
-            });
-         } catch (err) {
-            console.error(err);
-         }
-    };
+    // const handleRemoveWorkout = async (workout) => {
+    //     try {
+    //         const { data } = await removeWorkout({
+    //             variables: { workout },
+    //         });
+    //      } catch (err) {
+    //         console.error(err);
+    //      }
+    // };
 
     if (!workouts.length) {
         return <h3>No Workouts Created Yet</h3>
@@ -41,22 +41,22 @@ const WorkoutList = ({ workouts, isLoggedInUser  }) => {
                 <div className="card mb-3">
                   <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
                     <span>{workout}</span>
-                    {isLoggedInUser && (
+                    {/* {isLoggedInUser && (
                       <button
                         className="btn btn-sm btn-danger ml-auto"
                         onClick={() => handleRemoveWorkout(workout)}
                       >
                         X
                       </button>
-                    )}
+                    )} */}
                   </h4>
                 </div>
               </div>
             ))}
         </div>
-        {error && (
+        {/* {error && (
           <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
-        )}
+        )} */}
       </div>
     );
 };

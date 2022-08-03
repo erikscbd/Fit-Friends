@@ -34,8 +34,8 @@ const resolvers = {
 
         // ADD PROFILE
 
-        addProfile: async (parent, { name, email, username, password }) => {
-            const profile = await Profile.create({ name, email, username, password });
+        addProfile: async (parent, { username, password }) => {
+            const profile = await Profile.create({  username, password });
             const token = signToken(profile);
 
             return { token, profile };
@@ -94,37 +94,32 @@ const resolvers = {
         //DELETE PROFILE
         // Set up mutation so a logged in user can only remove their profile and no one else's
 
-        removeProfile: async (parent, args, context) => {
-            if (context.user) {
-                return Profile.findOneAndDelete({ _id: context.user._id }) 
-            }
-            throw new AuthenticationError('You do not have authorization to delete this profile!');
-        },
+        
 
         // DELETE FOOD ENTRY
         // Make it so a logged in user can only delete a food entry from their own profile
-        deleteFoodEntry: async (parent, { foodEntry }, context) => {
-            if (context.user) {
-                return Profile.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $pull: { foodEntries: foodEntry } },
-                    { new: true }
-                );
-            }
-            throw new AuthenticationError('You do not have authorization to delete this information!');
-        },
+        // deleteFoodEntry: async (parent, { foodEntry }, context) => {
+        //     if (context.user) {
+        //         return Profile.findOneAndUpdate(
+        //             { _id: context.user._id },
+        //             { $pull: { foodEntries: foodEntry } },
+        //             { new: true }
+        //         );
+        //     }
+        //     throw new AuthenticationError('You do not have authorization to delete this information!');
+        // },
         // DELETE WORKOUT 
         // Make it so a logged in user can only delete a workout from their own profile
-        deleteWorkoutEntry: async (parent, { workout }, context) => {
-            if (context.user) {
-                return Profile.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $pull: { workouts: workout } },
-                    { new: true }
-                );
-            }
-            throw new AuthenticationError('You do not have authorization to delete this information!');
-        },
+        // deleteWorkoutEntry: async (parent, { workout }, context) => {
+        //     if (context.user) {
+        //         return Profile.findOneAndUpdate(
+        //             { _id: context.user._id },
+        //             { $pull: { workouts: workout } },
+        //             { new: true }
+        //         );
+        //     }
+        //     throw new AuthenticationError('You do not have authorization to delete this information!');
+        // },
 
     },
 };
