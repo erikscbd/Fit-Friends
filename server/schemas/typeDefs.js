@@ -32,12 +32,7 @@ type FoodEntries {
   calories: Int
 }
 
-input TransactionInput {
-  price: Float
-  method: String
-  cardNumber: String
-  items: [ID]
-}
+
 
 type Mutation {
   addProfile(username: String!, password: String!) : Auth

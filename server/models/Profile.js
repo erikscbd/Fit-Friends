@@ -20,12 +20,12 @@ const profileSchema = new Schema({
         minlength: 5,
         unique: true,
     },
-    friends: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Profile'
-        }
-    ],
+    // friends: [
+    //     {
+    //         type: Schema.Types.ObjectId,
+    //         ref: 'Profile'
+    //     }
+    // ],
 
     foodEntries: [foodSchema],
     workouts: [workoutSchema]
