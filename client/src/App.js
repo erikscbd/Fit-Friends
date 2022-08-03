@@ -20,10 +20,6 @@ const httpLink = createHttpLink ({
   uri: '/graphql',
 });
 
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
-
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
