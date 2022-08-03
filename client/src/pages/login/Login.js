@@ -84,7 +84,7 @@ const Login = (props) => {
                                 onChange={handleChange}
                             />
                         </div>
-                        <button
+                        <button onClick={(handleFormSubmit)}
                             className="login-btn"
                             style={{ cursor: 'pointer' }}
                             type="submit"

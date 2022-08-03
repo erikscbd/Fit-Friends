@@ -5,6 +5,7 @@ import avatar from "../../img/avatar.png";
 import calories from "../../img/calories.jpg";
 import workoutIcon from "../../img/workout-logo.png";
 import "./Profile.css";
+import { QUERY_SINGLE_PROFILE, QUERY_ME, } from '../../utils/queries'
 
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
@@ -147,7 +148,7 @@ const Profile = () => {
                                     </div>
                                     <img src={workoutIcon} alt="workout-icon" className="workout" />
                                     <div className='workout-description-list'>
-                                        <div class='workout-list-items'> `${WorkoutList}`
+                                        <div class='workout-list-items'> `${}`
                                             {/* {profile.workouts?.length > 0 && (
                                                 <WorkoutsList
                                                     workouts={profile.workouts}

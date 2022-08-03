@@ -18,7 +18,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className='selection-container'>
-                    { true ? (
+                    { Auth.loggedIn() ? (
                         <>
                             <div className='selection-buttons'>
                                 <button className='update-status-button'>
