@@ -5,12 +5,18 @@
         "username": "ashbash777",
         "password": "password01",
         "workouts": [
-            "walked 3 miles",
-            "arms- light weight reps",
-            "hot yogo for 1 hour"
-        ] 
+            {
+                "workoutText": "100 pull ups"
+            },
+            {
+                "workoutText": "ran a mile"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType" : "chicken breast",
+                "calories" : 300
+            }
+        ]
     }
 ]
-      
-            
-    

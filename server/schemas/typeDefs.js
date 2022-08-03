@@ -3,16 +3,11 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type Profile {
     _id: ID
-    name: String
     username: String
     email: String
     password: String
     workouts: [String]!
-    foodEntries:
-        {
-            foodType: [String]!
-            calories: [Number]
-  }
+    foodEntries: 
 }
 
   type Auth {
