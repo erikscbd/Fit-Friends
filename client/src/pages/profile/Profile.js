@@ -11,12 +11,12 @@ import { useQuery } from '@apollo/client';
 
 import FoodEntryList from '../../components/FoodEntryList';
 import FoodEntryForm from '../../components/FoodEntryForm';
-// import WorkoutList from '../components/WorkoutsList';
+import WorkoutList from '../../components/WorkoutList';
 // import WorkoutForm from '../components/WorkoutsForm';
 // import WorkoutSchedule from '../components/WorkoutSchedule';
 // import WorkoutScheduleForm from '../components/WorkoutScheduleForm';
 
-// import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
+import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
@@ -147,7 +147,7 @@ const Profile = () => {
                                     </div>
                                     <img src={workoutIcon} alt="workout-icon" className="workout" />
                                     <div className='workout-description-list'>
-                                        <div class='workout-list-items'> `${workoutsList}`
+                                        <div class='workout-list-items'> `${WorkoutList}`
                                             {/* {profile.workouts?.length > 0 && (
                                                 <WorkoutsList
                                                     workouts={profile.workouts}
