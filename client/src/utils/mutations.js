@@ -8,7 +8,7 @@ mutation addProfile ($username: String!, $password: String!) {
       _id
     }
   }
-}`;
+`;
 
 
 export const ADD_FOOD_ENTRY = gql`
@@ -39,7 +39,7 @@ mutation login($username: String!, $password: String!) {
       _id
     }
   }
-}`;
+`;
 export const ADD_WORKOUT = gql`
 mutation addWorkout($profileId: ID!, $workout: String!) {
   addWorkout(profileId: $profileId, workout: $workout) {
