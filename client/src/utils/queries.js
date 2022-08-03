@@ -41,14 +41,5 @@ export const QUERY_SINGLE_PROFILE = gql`
     }
   }
 `
-export const QUERY_ME = gql`
-  query myProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
-      _id
-      username
-      foodEntries
-      workouts
-    }
-  }
-`
+
 ;
