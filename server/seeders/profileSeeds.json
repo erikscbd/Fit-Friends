@@ -1,32 +1,22 @@
 [
-  {
-    "name": "Deme Sibere",
-    "email": "DStest@test.com",
-    "username": "deme123",
-    "password": "TestPW2"
-  },
-  {
-    "name": "Saul Test",
-    "email": "saulTest@test.com",
-    "username": "saul123",
-    "password": "password05"
-  },
-  {
-    "name": "Tom Anderson",
-    "email": "tomA@myspace.com",
-    "username": "tom123",
-    "password": "EyeLuvCoding1"
-  },
-
-  {
-    "name": "Ashley Albertson",
-    "email": "ashley@fitfriends.com",
-    "username": "ashbash777",
-    "password": "password01",
-    "workouts": [
-      "walked 3 miles",
-      "arms- light weight reps",
-      "hot yogo for 1 hour"
-    ]
-  }
+    {
+        "name": "Ashley Albertson",
+        "email": "ashley@fitfriends.com",
+        "username": "ashbash777",
+        "password": "password01",
+        "workouts": [
+            {
+                "workoutText": "100 pull ups"
+            },
+            {
+                "workoutText": "ran a mile"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType" : "chicken breast",
+                "calories" : 300
+            }
+        ]
+    }
 ]

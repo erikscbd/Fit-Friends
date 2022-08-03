@@ -1,5 +1,9 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require ('bcrypt');
+const bcrypt = require('bcrypt');
+
+
+const foodSchema = new Schema({ foodType: 'string', calories: 'number' });
+const workoutSchema = new Schema({ workoutText: 'string' });
 
 const profileSchema = new Schema({
     username: {
@@ -30,16 +34,10 @@ const profileSchema = new Schema({
         }
     ],
 
-    workouts:[
-    {
-        type: String,
-        ref: 'Workout'
-    }],
+    foodEntries: [foodSchema],
+    workouts: [workoutSchema]
 
-    foodEntries: [{
-        type: Object,
-        ref: 'Food'
-    }],
+       
 
 });
 

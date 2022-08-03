@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile, Food, Workout } = require('../models');
+const { Profile } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -63,7 +63,7 @@ const resolvers = {
         //ADD FOOD ENTRY
         // Set up mutation so a logged in user can only add to their food entry and no one else's
         // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-        addFoodEntry: async (parent, { foodEntry }, context) => {
+        addFoodEntry: async (parent, { foodType, calories }, context) => {
             if (context.user) {
                 return Profile.findOneAndUpdate(
                     { _id: context.user._id },
