@@ -73,7 +73,7 @@ const FoodEntryForm = () => {
                         <input
                             type="text"
                             placeholder="Enter calorie count"
-                            value={foodIntake.foodCalories}
+                            value={foodEntry.foodCalories}
                             // value = {foodCalories}
                             className="calorie-count-intake"
                             onChange={(event) => setFoodEntry({ calories: event.target.value })}

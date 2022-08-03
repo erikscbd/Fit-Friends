@@ -21,12 +21,11 @@ export const REMOVE_FOOD_ENTRY = gql`
 `;
 
 export const LOGIN_USER = gql`
-mutation login($email: String!, $username: String!, $password: String!) {
-  login(email: $email, password: $password) {
+mutation login($username: String!, $password: String!) {
+  login(username: $username, password: $password) {
     token
     profile {
       _id
-      name
     }
   }
 }`;
@@ -40,12 +39,4 @@ mutation addWorkout($profileId: ID!, $workout: String!) {
 }
 `;
 
-export const REMOVE_WORKOUT = gql`
-mutation removeWorkout($workout: String!) {
-  removeWorkout(workout: $workout) {
-    _id
-    name
-    workouts
-  }
-} 
-`
+

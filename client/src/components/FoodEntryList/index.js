@@ -7,33 +7,31 @@ import { REMOVE_SKILL } from '../../utils/mutations';
 
 
 const FoodEntryList = ({ foodEntries, isLoggedInUser }) => {
-    const [removeFoodEntry, { error }] = useMutation(REMOVE_FOOD_ENTRY, {
-        update(cache, { data: { removeFoodEntry } }) {
-            try {
-                cache.writeQuery({
-                    query: QUERY_ME,
-                    data: { me: removeFoodEntry },
-                });
-            } catch (e) {
-                console.error(e);
+    // const [removeFoodEntry, { error }] = useMutation(REMOVE_FOOD_ENTRY, {
+    //     update(cache, { data: { removeFoodEntry } }) {
+    //         try {
+    //             cache.writeQuery({
+    //                 query: QUERY_ME,
+    //                 data: { me: removeFoodEntry },
+    //             });
+    //         } catch (e) {
+    //             console.error(e);
 
-            }
-        },
-    });
+    //         }
+    //     },
+    // });
     
-    const totalCalories = () => {
+    
 
-    }
-
-    const handleRemoveFoodEntry = async (foodEntry) => {
-        try {
-            const { data } = await removeFoodEntry({
-                variables: { foodEntry },
-            });
-        } catch (err) {
-            console.error(err);
-        }
-    };
+    // const handleRemoveFoodEntry = async (foodEntry) => {
+    //     try {
+    //         const { data } = await removeFoodEntry({
+    //             variables: { foodEntry },
+    //         });
+    //     } catch (err) {
+    //         console.error(err);
+    //     }
+    // };
 
     if (!foodEntries.length) {
         return <h3>No Food Entries Yet</h3>;
@@ -61,22 +59,22 @@ const FoodEntryList = ({ foodEntries, isLoggedInUser }) => {
                             <div className="food-entry">
                                 <h4 className="food-entry-items">
                                     <span>{foodEntry}</span>
-                                    {isLoggedInUser && (
+                                    {/* {isLoggedInUser && (
                                         <button
                                             className="btn remove-food-entry"
                                             onClick={() => handleRemoveFoodEntry(foodEntry)}
                                         >
                                             X
                                         </button>
-                                    )}
+                                    )} */}
                                 </h4>
                             </div>
                         </div>
                     ))}
             </div>
-            {error && (
+            {/* {error && (
                 <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
-            )}
+            )} */}
         </div>
     );
 };
