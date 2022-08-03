@@ -129,4 +129,8 @@ const resolvers = {
     },
 };
 
+<<<<<<< HEAD
 module.exports = resolvers;
+=======
+module.exports = resolvers;
+>>>>>>> 9ac9f96030e5d2e55a0f86ec87b9abe5db562f96

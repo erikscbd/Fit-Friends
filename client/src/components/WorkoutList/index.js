@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import { REMOVE_WORKOUT } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
 
-const WorkoutList = ({ workouts, isLoggedInUser = false  }) => {
+const WorkoutList = ({ workouts, isLoggedInUser  }) => {
     const [removeWorkout, { error }] = useMutation(REMOVE_WORKOUT, {
         update(cache, { data: {removeWorkout } }) {
           try {
@@ -28,15 +28,15 @@ const WorkoutList = ({ workouts, isLoggedInUser = false  }) => {
          }
     };
 
-    if (!workout.length) {
+    if (!workouts.length) {
         return <h3>No Workouts Created Yet</h3>
     }
 
     return (
         <div>
         <div className="flex-row justify-space-between my-4">
-          {skills &&
-            skills.map((workout) => (
+          {workouts &&
+            workouts.map((workout) => (
               <div key={workout} className="col-12 col-xl-6">
                 <div className="card mb-3">
                   <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
