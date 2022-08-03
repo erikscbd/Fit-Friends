@@ -4,10 +4,9 @@ const typeDefs = gql`
   type Profile {
     _id: ID
     username: String
-    email: String
     password: String
-    workouts: [String]!
-    foodEntries: 
+    workouts: [Workout]
+    foodEntries: [FoodEntries]
 }
 
   type Auth {
@@ -21,26 +20,34 @@ const typeDefs = gql`
     me: Profile
   }
 
-  type workout{
-    id: ID!
-    workoutText: string
-  }
+type Workout {
+  id: ID!
+  workoutText: String!
+  
+}
 
-  type workoutInput{
-    workoutText: string
-  }
+type FoodEntries {
+  id: ID!
+  foodType: String!
+  calories: Int
+}
 
-  type Mutation {
-    addProfile(name: String!, email: String!, password: String!): Auth
-    login(username: String!, password: String!): Auth
+input TransactionInput {
+  price: Float
+  method: String
+  cardNumber: String
+  items: [ID]
+}
 
-    addFoodEntry(profile: ID, foodEntry: String): Profile
-    addWorkout(profileId: ID!, workout: String!): Profile
+type Mutation {
+  addProfile(username: String!, password: String!) : Auth
+  login(username: String!, password: String!) : Auth
 
-    removeProfile: Profile
-    removeFoodEntry(foodEntry: String!): Profile
-    removeWorkout(workout: String!): Profile
-  }
-`;
+  addFoodEntry(foodType: String!, calories: Int) : FoodEntries
+  addWorkout(workoutText: String!) : Workout
+}`
+
+
+;
 
 module.exports = typeDefs;

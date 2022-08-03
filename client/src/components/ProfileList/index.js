@@ -16,12 +16,14 @@ const ProfileList = ({ profiles, title }) => {
                         <div key={profile._id} className="col-12 col-xl-6">
                             <div className="card mb-3">
                                 <h4 className="card-header bg-dark text-light p-2 m-0">
-                                    {profile.name} <br />
-                                    <span className="text-white" style={{ fontSize: '1rem' }}>
-                                        currently has {profile.skills ? profile.skills.length : 0}{' '}
-                                        endorsed skill
-                                        {profile.skills && profile.skills.length === 1 ? '' : 's'}
-                                    </span>
+                                    {profile.username} <br />
+                                    <div className ="workouts">
+                                        {profile.workouts.map((workout)=> {
+                                            return (
+                                                <div>{workout.workoutText}</div>
+                                            )
+                                        })} 
+                                    </div>
                                 </h4>
 
                                 <Link

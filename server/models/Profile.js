@@ -14,13 +14,6 @@ const profileSchema = new Schema({
         min: 7,
         max: 15,
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-        match: [/.+@.+\..+/, 'Must match an email address!']
-    },
     password: {
         type: String,
         required: true,
@@ -55,7 +48,7 @@ profileSchema.pre('save', async function (next) {
     next();
 });
 
-profileSchema.method.isCorrectPassword = async function (password) {
+profileSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
