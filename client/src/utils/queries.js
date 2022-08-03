@@ -40,4 +40,15 @@ export const QUERY_SINGLE_PROFILE = gql`
       workouts
     }
   }
-`;
+`
+export const QUERY_ME = gql`
+  query myProfile($profileId: ID!) {
+    profile(profileId: $profileId) {
+      _id
+      username
+      foodEntries
+      workouts
+    }
+  }
+`
+;
