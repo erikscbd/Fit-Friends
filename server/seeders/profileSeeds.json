@@ -7,16 +7,19 @@
 {
     "name": "Deme Sibere",
     "email": "DStest@test.com",
+    "username": "deme123",
     "password": "TestPW2"
 },
 {
     "name": "Saul Test",
     "email": "saulTest@test.com",
+    "username": "saul123",
     "password": "password05"
 },
 {
     "name": "Tom Anderson",
     "email": "tomA@myspace.com",
+    "username": "tom123",
     "password": "EyeLuvCoding1"
 
 }]
