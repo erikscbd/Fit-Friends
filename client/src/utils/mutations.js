@@ -35,19 +35,20 @@ export const ADD_WORKOUT = gql`
   mutation addWorkout($profileId: ID!, $workout: String!) {
     addWorkout(profileId: $profileId, workout: $workout) {
       _id
-      name
+      username
       workouts
     }
   }
 `;
 
 export const ADD_PROFILE = gql`
-  mutation addProfile($name: String!, $email: String!, $password: String!) {
+  mutation addProfile($username: String!, $email: String!, $password: String!) {
     addProfile(username: $username, email: $email, password: $password) {
       token
       profile {
         _id
         username
+        email
       }
     }
   }

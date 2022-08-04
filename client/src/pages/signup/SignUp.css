@@ -6,7 +6,6 @@
   background-color: black;
   height: 120px;
   border-top: solid rgb(125, 249, 255) 20px;
- 
 }
 
 .logo-img {
@@ -31,7 +30,6 @@
   color: white;
   background-color: black;
   height: 700px;
-  
 }
 
 .sign-up-form {
@@ -82,7 +80,6 @@ input {
   margin-bottom: 20px;
   text-align: center;
   font-size: 40px;
-  margin-top: -600px;
 }
 
 /* .sign-up-prompt {
@@ -133,7 +130,7 @@ footer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /* border-bottom: solid rgb(125, 249, 255) 15px; */
+  border-bottom: solid rgb(125, 249, 255) 15px;
 }
 
 .footer-logo {

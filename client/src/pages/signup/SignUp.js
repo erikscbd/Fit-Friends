@@ -49,15 +49,16 @@ const Signup = () => {
       </div>
 
       <div className="sign-up-container">
-        <form onSubmit={handleFormSubmit}>
-          <input
+        <form onSubmit={handleFormSubmit}
+        
             className="sign-up-form"
             placeholder="Your username"
             name="username"
             type="text"
             value={formState.username}
             onChange={handleChange}
-          />
+            >
+        
 
           <div className="sign-up-title">Sign Up!</div>
 
@@ -69,7 +70,7 @@ const Signup = () => {
                 placeholder="username"
                 name="username"
                 type="username"
-                value={formState.username}
+                // value={formState.username}
                 onChange={handleChange}
               />
             </div>
@@ -80,7 +81,7 @@ const Signup = () => {
                 placeholder="Your email"
                 name="email"
                 type="email"
-                value={formState.email}
+                // value={formState.email}
                 onChange={handleChange}
               />
             </div>
@@ -91,7 +92,7 @@ const Signup = () => {
                 placeholder="******"
                 name="password"
                 type="password"
-                value={formState.password}
+                // value={formState.password}
                 onChange={handleChange}
               />
             </div>

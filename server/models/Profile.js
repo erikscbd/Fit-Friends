@@ -20,6 +20,13 @@ const profileSchema = new Schema({
         minlength: 5,
         unique: true,
     },
+    email: {
+        type: String,
+        required: false,
+        unique: true,
+        trim: true,
+        match: [/.+@.+\..+/, 'Must match an email address!']
+    },
     friends: [
         {
             type: Schema.Types.ObjectId,

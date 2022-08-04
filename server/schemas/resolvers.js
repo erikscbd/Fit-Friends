@@ -34,7 +34,7 @@ const resolvers = {
 
         // ADD PROFILE
 
-        addProfile: async (parent, { username, password }) => {
+        addProfile: async (parent, { username, password , email }) => {
             const profile = await Profile.create({  username, password });
             const token = signToken(profile);
 
