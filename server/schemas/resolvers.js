@@ -1,4 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
+const { assertDirective } = require('graphql');
 const { Profile } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -60,30 +61,46 @@ const resolvers = {
             return { token, profile };
         },
 
+
         //ADD FOOD ENTRY
-        // Set up mutation so a logged in user can only add to their food entry and no one else's
-        // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-        addFoodEntry: async (parent, { foodType, calories }, context) => {
-            if (context.user) {
+        addFoodEntry: async (parent, { profileId, foodType, calories }, context) => {
+            if(context.user) {
                 return Profile.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { foodEntries: foodEntry } },
+                    { _id: profileId },
+                    { $addToSet: { foodEntries: { foodType, calories } } },
                     { new: true }
                 );
             }
-            // If user attempts to execute this mutation and isn't the user associated with the account, throw an error
-            throw new AuthenticationError('You do not have authorization to update this information');
         },
 
         // ADD WORKOUT
         // Set up mutation so a logged in user can only add to their workout entry and no one else's
         // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-        addWorkout: async (parent, { workout }, context) => {
-            // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
+        addWorkout: async (parent, { profileId, workoutText }, context) => {
+            if(context.user) {
+                return Profile.findOneAndUpdate(
+                    { _id: ProfileId },
+                    { $addToSet: { workouts: { workoutText } } },
+                    { new: true }
+                );
+            }
+        },
+
+        //DELETE PROFILE
+        // Set up mutation so a logged in user can only remove their profile and no one else's
+        deleteProfile: async (parent, { profileId }, context) => {
+            if (context.user) {
+                return Profile.findOneAndDelete({ _id: profileId });
+            }
+            // If user attempts to execute this mutation and isn't the user associated with the account, throw an error
+            throw new AuthenticationError('You do not have authorization to update this information');
+        },
+        
+        deleteFoodEntry: async (parent, { foodEntryId }, context) => {
             if (context.user) {
                 return Profile.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { workouts: workout } },
+                    { $pull: { foodEntries: { _id: foodEntryId } } },
                     { new: true }
                 );
             }
@@ -91,35 +108,19 @@ const resolvers = {
             throw new AuthenticationError('You do not have authorization to update this information');
         },
 
-        //DELETE PROFILE
-        // Set up mutation so a logged in user can only remove their profile and no one else's
+        deleteWorkout: async (parent, { workoutId }, context) => {
+            if (context.user) {
+                return Profile.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { workouts: { _id: workoutId } } },
+                    { new: true }
+                );
+            }
+            // If user attempts to execute this mutation and isn't the user associated with the account, throw an error
+            throw new AuthenticationError('You do not have authorization to update this information');
+        }
 
         
-
-        // DELETE FOOD ENTRY
-        // Make it so a logged in user can only delete a food entry from their own profile
-        // deleteFoodEntry: async (parent, { foodEntry }, context) => {
-        //     if (context.user) {
-        //         return Profile.findOneAndUpdate(
-        //             { _id: context.user._id },
-        //             { $pull: { foodEntries: foodEntry } },
-        //             { new: true }
-        //         );
-        //     }
-        //     throw new AuthenticationError('You do not have authorization to delete this information!');
-        // },
-        // DELETE WORKOUT 
-        // Make it so a logged in user can only delete a workout from their own profile
-        // deleteWorkoutEntry: async (parent, { workout }, context) => {
-        //     if (context.user) {
-        //         return Profile.findOneAndUpdate(
-        //             { _id: context.user._id },
-        //             { $pull: { workouts: workout } },
-        //             { new: true }
-        //         );
-        //     }
-        //     throw new AuthenticationError('You do not have authorization to delete this information!');
-        // },
 
     },
 };
