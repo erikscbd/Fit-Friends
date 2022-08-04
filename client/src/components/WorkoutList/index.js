@@ -5,28 +5,28 @@ import { REMOVE_WORKOUT } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
 
 const WorkoutList = ({ workouts, isLoggedInUser  }) => {
-    // const [removeWorkout, { error }] = useMutation(REMOVE_WORKOUT, {
-    //     update(cache, { data: {removeWorkout } }) {
-    //       try {
-    //         cache.writeQuery({
-    //             query: QUERY_ME,
-    //             data: { me: removeWorkout },
-    //         });
-    //       }  catch (e) {
-    //         console.error(e);
-    //       }
-    //     },
-    // });
+    const [removeWorkout, { error }] = useMutation(REMOVE_WORKOUT, {
+        update(cache, { data: {removeWorkout } }) {
+          try {
+            cache.writeQuery({
+                query: QUERY_ME,
+                data: { me: removeWorkout },
+            });
+          }  catch (e) {
+            console.error(e);
+          }
+        },
+    });
 
-    // const handleRemoveWorkout = async (workout) => {
-    //     try {
-    //         const { data } = await removeWorkout({
-    //             variables: { workout },
-    //         });
-    //      } catch (err) {
-    //         console.error(err);
-    //      }
-    // };
+    const handleRemoveWorkout = async (workout) => {
+        try {
+            const { data } = await removeWorkout({
+                variables: { workout },
+            });
+         } catch (err) {
+            console.error(err);
+         }
+    };
 
     if (!workouts.length) {
         return <h3>No Workouts Created Yet</h3>

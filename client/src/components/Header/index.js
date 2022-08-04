@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import logo from "../../img/fitfriends logo.png";
 import Auth from '../../utils/auth';
 import './Header.css';
+import Home from '../../pages/home/Home'
+import Profile from '../../pages/profile/Profile'
 
 const Header = () => {
     const logout = (event) => {
@@ -32,7 +34,7 @@ const Header = () => {
                                     Find Friends
                                 </button>
 
-                                <Link to="/me"><button className="view-profile-button">
+                                <Link to="/me"><button className="view-profile-button" onClick={Profile}>
                                     View My Profile
                                 </button>
                                 </Link>

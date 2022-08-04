@@ -1,26 +1,22 @@
 .logo-top-container {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: black;
-    height: 120px;
-    border-top: solid rgb(125, 249, 255) 20px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: black;
+  height: 120px;
+  border-top: solid rgb(125, 249, 255) 20px;
+ 
 }
 
 .logo-img {
-
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .ff-logo {
-    width: 300px;
+  width: 300px;
 }
-
-
 
 /* .login-title {
     color: white;
@@ -29,72 +25,64 @@
 } */
 
 .sign-up-container {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: black;
-    height: 700px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: black;
+  height: 700px;
+  
 }
 
 .sign-up-form {
-    border: solid rgb(125, 249, 255) 3px;
-    border-radius: 20px;
-    height: 600px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: 25px;
-    background-color: black;
+  border: solid rgb(125, 249, 255) 3px;
+  border-radius: 20px;
+  height: 600px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 25px;
+  background-color: black;
 }
 
 .sign-up-form-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .form-input {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .enter-info {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 input {
-    width: 300px;
-    height: 40px;
-    background-color: white;
-    /* color: white; */
-    border: solid 2px white;
-    border-radius: 7px;
-    margin-top: 10px;
-    font-size: 20px;
-
+  width: 300px;
+  height: 40px;
+  background-color: white;
+  /* color: white; */
+  border: solid 2px white;
+  border-radius: 7px;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
-
-
 .sign-up-title {
-
-
-    display: block;
-    color: white;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 40px;
+  display: block;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 40px;
+  margin-top: -600px;
 }
 
 /* .sign-up-prompt {
@@ -108,56 +96,48 @@ input {
     text-decoration: underline;
 } */
 
-
 .sign-up-btn {
-    background-color: rgb(125, 249, 255);
-    color: black;
-    border: 2.5px white solid;
-    border-radius: 7px;
-    height: 40px;
-    width: 200px;
-    font-size: 22px;
-    margin-top: 40px;
-    /* font-weight: bold; */
-    /* margin-bottom: 10px; */
+  background-color: rgb(125, 249, 255);
+  color: black;
+  border: 2.5px white solid;
+  border-radius: 7px;
+  height: 40px;
+  width: 200px;
+  font-size: 22px;
+  margin-top: 40px;
+  /* font-weight: bold; */
+  /* margin-bottom: 10px; */
 }
 
 .tagline {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin-top: 30px;
 }
 
 p {
-    color: white;
-    margin: 15px;
+  color: white;
+  margin: 15px;
 }
 
 p span {
-    color: #DFFF00
+  color: #dfff00;
 }
-
 
 footer {
-    background-color: rgb(125, 249, 255);
-    height: 60px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    /* border-bottom: solid rgb(125, 249, 255) 15px; */
-
+  background-color: rgb(125, 249, 255);
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* border-bottom: solid rgb(125, 249, 255) 15px; */
 }
 
-
-
-
-
-
 .footer-logo {
-    width: 175px;
-    margin-top: 15px;
-    margin-left: 10px;
+  width: 175px;
+  margin-top: 15px;
+  margin-left: 10px;
 }
