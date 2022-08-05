@@ -14,8 +14,228 @@
         ],
         "foodEntries": [
             {
-                "foodType" : "chicken breast",
-                "calories" : 300
+                "foodType": "chicken breast",
+                "calories": 300
+            }
+        ]
+    },
+    {
+        "name": "Erik Escobedo",
+        "email": "erik@fitfriends.com",
+        "username": "eerik111",
+        "password": "password02",
+        "workouts": [
+            {
+                "workoutText": "100 push ups"
+            },
+            {
+                "workoutText": "ran two miles"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "chicken strips",
+                "calories": 250
+            }
+        ]
+    },
+    {
+        "name": "Katy Brown",
+        "email": "katy@fitfriends.com",
+        "username": "kbrown222",
+        "password": "password03",
+        "workouts": [
+            {
+                "workoutText": "100 squats"
+            },
+            {
+                "workoutText": "ran three miles"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "fish",
+                "calories": 200
+            }
+        ]
+    },
+    {
+        "name": "Saul Ventura",
+        "email": "saul@fitfriends.com",
+        "username": "sventura333",
+        "password": "password04",
+        "workouts": [
+            {
+                "workoutText": "100 pull ups"
+            },
+            {
+                "workoutText": "ran a mile"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "chicken breast",
+                "calories": 300
+            }
+        ]
+    },
+    {
+        "name": "Kevin Anderson",
+        "email": "kevin@fitfriends.com",
+        "username": "kanderson444",
+        "password": "password05",
+        "workouts": [
+            {
+                "workoutText": "100 bench press"
+            },
+            {
+                "workoutText": "Muscular Endurance"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "Beans",
+                "calories": 100
+            }
+        ]
+    },
+    {
+        "name": "Deme Sibere",
+        "email": "deme@fitfriends.com",
+        "username": "dsibere555",
+        "password": "password06",
+        "workouts": [
+            {
+                "workoutText": "100 chest press"
+            },
+            {
+                "workoutText": "Endurance"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "chicken nuggets",
+                "calories": 300
+            }
+        ]
+    },
+    {
+        "name": "Justin Kunz",
+        "email": "jkunz@fitfriends.com",
+        "username": "jkunz662",
+        "password": "password07",
+        "workouts": [
+            {
+                "workoutText": "5 dead lift"
+            },
+            {
+                "workoutText": "walk a mile"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "chicken sandwich",
+                "calories": 300
+            }
+        ]
+    },
+    {
+        "name": "Khalid Shirwa",
+        "email": "khalid@fitfriends.com",
+        "username": "kshirwa777",
+        "password": "password08",
+        "workouts": [
+            {
+                "workoutText": "Aerobic training"
+            },
+            {
+                "workoutText": "100 jumping jacks"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "Tofu",
+                "calories": 300
+            }
+        ]
+    },
+    {
+        "name": "George Escobar",
+        "email": "george@fitfriends.com",
+        "username": "gescobar888",
+        "password": "password09",
+        "workouts": [
+            {
+                "workoutText": "strength training"
+            },
+            {
+                "workoutText": "100 dumpbell bench press"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "Lentils",
+                "calories": 300
+            }
+        ]
+    },
+    {
+        "name": "Sean Fleming",
+        "email": "sean@fitfriends.com",
+        "username": "sfleming999",
+        "password": "password11",
+        "workouts": [
+            {
+                "workoutText": "High Intensity training"
+            },
+            {
+                "workoutText": "100 incline dumpbell press"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "Egg",
+                "calories": 300
+            }
+        ]
+    },
+    {
+        "name": "Joshua Clancy",
+        "email": "joshua@fitfriends.com",
+        "username": "jclancy999",
+        "password": "password12",
+        "workouts": [
+            {
+                "workoutText": "Strair Stepper"
+            },
+            {
+                "workoutText": "Step 100 stairs"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "Cottage Cheese",
+                "calories": 300
+            }
+        ]
+    },
+    {
+        "name": "Edson Del Castillo",
+        "email": "edson@fitfriends.com",
+        "username": "edecastillo100",
+        "password": "password13",
+        "workouts": [
+            {
+                "workoutText": "walking"
+            },
+            {
+                "workoutText": "walk four miles"
+            }
+        ],
+        "foodEntries": [
+            {
+                "foodType": "Greek Yogurt",
+                "calories": 300
             }
         ]
     }
