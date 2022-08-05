@@ -15,6 +15,10 @@ import Signup from './pages/signup/SignUp';
 import Profile from './pages/profile/Profile';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
+import FoodEntryForm from './components/FoodEntryForm'
+import WorkoutEntryForm from './components/WorkoutEntry'
+import WelcomePage from './pages/welcome/Welcome';
+
 
 const httpLink = createHttpLink ({
   uri: '/graphql',
@@ -49,9 +53,21 @@ function App() {
           <Header />
           <div className="header-container">
             <Routes>
-              <Route
+            <Route
                 path="/"
+                element={<WelcomePage />}
+              />
+              <Route
+                path="/homepage"
                 element={<Home />}
+              />
+              <Route
+                path="/food-entry-form"
+                element={<FoodEntryForm />}
+              />
+                <Route
+                path="/workout-entry-form"
+                element={<WorkoutEntryForm />}
               />
               <Route
                 path="/login"

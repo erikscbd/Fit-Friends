@@ -35,6 +35,7 @@ const Signup = () => {
       });
 
       Auth.login(data.addProfile.token);
+      window.location.href = '/homepage'
     } catch (e) {
       console.error(e);
     }

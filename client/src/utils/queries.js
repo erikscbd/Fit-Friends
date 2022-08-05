@@ -1,11 +1,12 @@
 import { gql } from '@apollo/client';
 
-export const  QUERY_ME = gql`
+export const QUERY_ME = gql`
 query Profiles {
   me {
     username
     workouts {
       workoutText
+      workoutTime
     }
     foodEntries {
       foodType
@@ -21,15 +22,14 @@ query Profiles {
     username
     workouts {
       workoutText
+      workoutTime
     }
     foodEntries {
       foodType
       calories
     }
   }
-}
-
-`
+}`
 
 export const QUERY_SINGLE_PROFILE = gql`
   query singleProfile($profileId: ID!) {

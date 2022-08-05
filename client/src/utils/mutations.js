@@ -1,12 +1,21 @@
 import { gql } from "@apollo/client";
 
-export const ADD_FOOD_ENTRY = gql`
-  mutation addFoodEntry($foodEntry: String!, $calorieEntry: Int) {
-    addFoodEntry(foodEntry: $foodEntry, calorieEntry: $calorieEntry) {
+export const ADD_PROFILE = gql`
+mutation addProfile ($username: String!, $password: String!) {
+  addProfile(username: $username, password: $password) {
+    token
+    profile {
       _id
-      username
-      foodEntry
-      calorieEntry
+    }
+  }
+}
+`;
+
+
+export const ADD_FOOD_ENTRY = gql`
+  mutation addFoodEntry($foodEntry: FoodEntryInput) {
+    addFoodEntry(foodEntry: $foodEntry) {
+      id
     }
   }
 `;
@@ -32,24 +41,9 @@ export const LOGIN_USER = gql`
   }
 `;
 export const ADD_WORKOUT = gql`
-  mutation addWorkout($profileId: ID!, $workout: String!) {
-    addWorkout(profileId: $profileId, workout: $workout) {
-      _id
-      username
-      workouts
-    }
-  }
-`;
-
-export const ADD_PROFILE = gql`
-  mutation addProfile($username: String!, $email: String!, $password: String!) {
-    addProfile(username: $username, email: $email, password: $password) {
-      token
-      profile {
-        _id
-        username
-        email
-      }
+  mutation addWorkout($workout: WorkoutInput!) {
+    addWorkout(workout: $workout) {
+      id
     }
   }
 `;
