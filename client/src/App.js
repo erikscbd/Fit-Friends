@@ -1,5 +1,4 @@
-// import logo from './logo.svg';
-// import './App.css';
+
 import React from 'react';
 import {
   ApolloClient,
@@ -20,8 +19,6 @@ import Footer from '../src/components/Footer';
 const httpLink = createHttpLink ({
   uri: '/graphql',
 });
-
-
 
 
 const authLink = setContext((_, { headers }) => {
