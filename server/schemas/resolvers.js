@@ -35,7 +35,7 @@ const resolvers = {
 
         // ADD PROFILE
 
-        addProfile: async (parent, { username, password , email }) => {
+        addProfile: async (parent, { username, password }) => {
             const profile = await Profile.create({  username, password });
             const token = signToken(profile);
 
@@ -63,27 +63,29 @@ const resolvers = {
 
 
         //ADD FOOD ENTRY
-        addFoodEntry: async (parent, { profileId, foodType, calories }, context) => {
+        addFoodEntry: async (parent, { foodEntry }, context) => {
             if(context.user) {
                 return Profile.findOneAndUpdate(
-                    { _id: profileId },
-                    { $addToSet: { foodEntries: { foodType, calories } } },
+                    { username: context.user.username },
+                    { $addToSet: { foodEntries: foodEntry } },
                     { new: true }
-                );
+                )
             }
+            throw new AuthenticationError('You do not have authorization to update this information!');
         },
 
         // ADD WORKOUT
         // Set up mutation so a logged in user can only add to their workout entry and no one else's
         // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-        addWorkout: async (parent, { profileId, workoutText }, context) => {
+        addWorkout: async (parent, { workout }, context) => {
             if(context.user) {
-                return Profile.findOneAndUpdate(
-                    { _id: ProfileId },
-                    { $addToSet: { workouts: { workoutText } } },
-                    { new: true }
-                );
+            return Profile.findOneAndUpdate(
+                { username: context.user.username },
+                { $addToSet: { workouts: workout } },
+                { new: true }
+            )
             }
+            throw new AuthenticationError('You do not have authorization to update this information!');
         },
 
         //DELETE PROFILE
