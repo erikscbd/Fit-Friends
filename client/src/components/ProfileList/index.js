@@ -18,12 +18,24 @@ const ProfileList = ({ profiles, title }) => {
                 <h4 className="card-header bg-dark text-light p-2 m-0">
                   {profile.username} <br />
                   <div className="workouts">
-                    <span className="text-white" style={{ fontSize: "1rem" }}>
-                      currently has {profile.workouts ? profile.workouts.length : 0}{" "}
-                      endorsed skill
-                      {profile.workouts && profile.workouts.length === 1 ? "" : "s"}
-                    </span>
+                    <h2>Workouts</h2>
+                      {profile.workouts.map((workout) => (
+                        <div>
+                          <div>{workout.workoutText}</div>
+                          <div>{workout.workoutTime}</div>
+                        </div>
+                      ))}
                   </div>
+                    <div className="food-entries">
+                      <h2>Food Entries</h2>
+                      {profile.foodEntries.map((foodEntry) => (
+                        <div>
+                          <div>{foodEntry.foodType}</div>
+                          <div>{foodEntry.calories}</div>
+                        </div>
+                      ))}
+                    </div>
+     
                 </h4>
 
                 <Link

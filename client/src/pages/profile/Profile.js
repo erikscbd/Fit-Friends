@@ -34,6 +34,9 @@ const Profile = () => {
 
     // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
     const profile = data?.me || data?.profile || {};
+    console.log(profile)
+
+
 
     // Use React Router's `<Navigate />` component to redirect to personal profile page if username is yours
     if (Auth.loggedIn() && Auth.getProfile().data._id === profileId) {
@@ -44,7 +47,7 @@ const Profile = () => {
         return <div>Loading Your Profile...</div>;
     }
 
-    if (!profile?.name) {
+    if (!profile?.username) {
         return <Navigate to="/signIn" />;
 
         // (
@@ -55,37 +58,11 @@ const Profile = () => {
         // )
 
     }
-
+    
+    const caloriesTotal = profile.foodEntries.reduce((a, c) => a + c.calories,0)
+    const workoutMinutes = profile.workouts.reduce((a, c) => a + c.workoutTime, 0)
     return (
         <div>
-            <div className='logo-top-container'>
-                <div className='logo-image'>
-                    <img src={logo} alt="fit friends logo" className='ff-logo' />
-                </div>
-            </div>
-            <div className='selection-container'>
-                <div className='selection-buttons'>
-                    <button className='home-buttons'>
-                        Update Status
-                    </button>
-                    <button className='home-buttons'>
-                        Schedule Workout
-                    </button>
-
-                    <button className="home-buttons">
-                        Find Friends
-                    </button>
-                    <button className="home-buttons">
-                        Edit Profile
-                    </button>
-                    <button className="home-buttons">
-                        Home
-                    </button>
-                    <button className="home-buttons">
-                        Logout
-                    </button>
-                </div>
-            </div>
 
 
             <div className='profile-container'>
@@ -96,7 +73,7 @@ const Profile = () => {
                             <div className='profile-title-background'>
 
 
-                                <h2 className="username"> ashbash777's
+                                <h2 className="username"> {profile.username}
                                     {profileId ? `${profile.name}'s` : 'Your'}
                                 </h2>
 
@@ -123,7 +100,7 @@ const Profile = () => {
                                     </div>
                                     <img src={calories} alt="calories-icon" className="calories" />
 
-                                    <div className='calories-amount'> `${profile.caloriesTotal}`
+                                    <div className='calories-amount'>{caloriesTotal}
                                         {/* {profile.calories?.length > 0 && (
                                             <CaloriesList
                                                 calories={profile.calories}
@@ -144,11 +121,11 @@ const Profile = () => {
                             <div className='workouts-container'>
                                 <div className='workout-container-contents'>
                                     <div className='workouts-title'>
-                                        Workouts Completed
+                                        Workout Minutes
                                     </div>
                                     <img src={workoutIcon} alt="workout-icon" className="workout" />
                                     <div className='workout-description-list'>
-                                        <div class='workout-list-items'> `${}`
+                                        <div class='workout-list-items'> {workoutMinutes}
                                             {/* {profile.workouts?.length > 0 && (
                                                 <WorkoutsList
                                                     workouts={profile.workouts}
