@@ -22,6 +22,7 @@ const typeDefs = gql`
 type Workout {
   id: ID!
   workoutText: String!
+  workoutTime: Int
   
 }
 
@@ -31,14 +32,23 @@ type FoodEntries {
   calories: Int
 }
 
+input FoodEntryInput {
+  foodType: String!
+  calories: Int
+}
+
+input WorkoutInput {
+  workoutText: String!
+  workoutTime: Int
+}
 
 
 type Mutation {
-  addProfile(username: String!, password: String!, email: String!) : Auth
+  addProfile(username: String!, password: String!) : Auth
   login(username: String!, password: String!) : Auth
 
-  addFoodEntry(foodType: String!, calories: Int) : FoodEntries
-  addWorkout(workoutText: String!) : Workout
+  addFoodEntry(foodEntry: FoodEntryInput) : FoodEntries
+  addWorkout(workout: WorkoutInput) : Workout
 }`
 
 

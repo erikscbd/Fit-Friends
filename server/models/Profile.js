@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 
 const foodSchema = new Schema({ foodType: 'string', calories: 'number' });
-const workoutSchema = new Schema({ workoutText: 'string' });
+const workoutSchema = new Schema({ workoutText: 'string', workoutTime: 'number'});
 
 const profileSchema = new Schema({
     username: {
@@ -32,11 +32,6 @@ const profileSchema = new Schema({
 
        
 
-});
-
-
-profileSchema.virtual('friendCount').get(function () {
-    return this.friends?.length;
 });
 
 profileSchema.pre('save', async function (next) {

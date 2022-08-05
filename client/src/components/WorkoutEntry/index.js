@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import "./FoodEntryForm.css";
-import { ADD_FOOD_ENTRY } from "../../utils/mutations";
+import "./WorkoutEntry.css";
+import { ADD_WORKOUT } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
-const FoodEntryForm = ({ profileId }) => {
+const WorkoutEntryForm = ({ profileId }) => {
   console.log(1)
-  const [foodType, setFoodType] = useState("");
-  const [addFoodEntry, { error }] = useMutation(ADD_FOOD_ENTRY);
+//   const [foodType, setFoodType] = useState("");
+  const [addWorkout, { error }] = useMutation(ADD_WORKOUT);
 
-  const [foodEntry, setFoodEntry] = useState({
-    foodType: "",
-    calories: "",
+  const [workout, setWorkout] = useState({
+    workoutText: "",
+    workoutTime: "",
   });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const data = await addFoodEntry({
-        variables: { foodEntry },
+      const data = await addWorkout({
+        variables: { workout },
       });
 
-      setFoodEntry("");
+      setWorkout("");
       //setFoodType('');
       //setFoodCalories;
     } catch (err) {
@@ -34,33 +34,33 @@ const FoodEntryForm = ({ profileId }) => {
 
   return (
     <div className="food-entry-container">
-      <h4>Keep track of your food intake by entering items below</h4>
+      <h4>Keep track of your workouts by entering them below</h4>
 
       {Auth.loggedIn() ? (
         <form
           className="flex-row justify-center justify-space-between-md align-center food-entry-form"
           onSubmit={handleFormSubmit}
         >
-          <div className="food-entry-title">Food Entry</div>
+          <div className="food-entry-title">Workout Entry</div>
           <div className="food-type">
             <input
               type="text"
-              placeholder="Enter food item"
-              value={foodEntry.foodType}
+              placeholder="Enter workout type"
+              value={workout.workoutText}
               className="food-type-intake"
               onChange={(event) =>
-                setFoodEntry({ ...foodEntry, foodType: event.target.value })
+                setWorkout({ ...workout, workoutText: event.target.value })
               }
             />
           </div>
           <div className="calorie-count">
             <input
               type="text"
-              placeholder="Enter calorie count"
-              value={foodEntry.calories}
+              placeholder="Enter workout time"
+              value={workout.workoutTime}
               className="calorie-count-intake"
               onChange={(event) =>
-                setFoodEntry({ ...foodEntry, calories: parseInt(event.target.value) })
+                setWorkout({ ...workout, workoutTime: parseInt(event.target.value) })
               }
               // onClick={() => setFoodCalories()}
             />
@@ -87,4 +87,4 @@ const FoodEntryForm = ({ profileId }) => {
   );
 };
 
-export default FoodEntryForm;
+export default WorkoutEntryForm;

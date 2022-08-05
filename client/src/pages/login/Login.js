@@ -34,6 +34,7 @@ const Login = (props) => {
             });
 
             Auth.login(data.login.token);
+            window.location.href = '/homepage'
         } catch (e) {
             console.error(e);
         }
