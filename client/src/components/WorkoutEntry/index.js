@@ -37,6 +37,7 @@ const WorkoutEntryForm = ({ profileId }) => {
       <h4>Keep track of your workouts by entering them below</h4>
 
       {Auth.loggedIn() ? (
+        <div className="workout-container">
         <form
           className="flex-row justify-center justify-space-between-md align-center food-entry-form"
           onSubmit={handleFormSubmit}
@@ -67,7 +68,7 @@ const WorkoutEntryForm = ({ profileId }) => {
           </div>
 
           <div className="submit-food-intake">
-            <button className="btn submit-food-intake" type="submit">
+            <button className="btn-submit-food-intake" type="submit">
               Submit
             </button>
           </div>
@@ -77,6 +78,7 @@ const WorkoutEntryForm = ({ profileId }) => {
             </div>
           )}
         </form>
+        </div>
       ) : (
         <p>
           You need to be logged in to enter your food intake. Please{" "}

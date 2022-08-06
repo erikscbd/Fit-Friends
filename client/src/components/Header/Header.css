@@ -48,6 +48,13 @@
 
 }
 
+.welcome-page-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 button {
     display: flex;
     /* flex-direction: row; */
@@ -80,4 +87,3 @@ button {
     align-items: center;
     flex-wrap: wrap;
 }
-

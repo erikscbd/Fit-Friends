@@ -17,7 +17,7 @@ import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import FoodEntryForm from './components/FoodEntryForm'
 import WorkoutEntryForm from './components/WorkoutEntry'
-import WelcomePage from './pages/welcome/Welcome';
+import Welcome from './pages/welcome/Welcome';
 
 
 const httpLink = createHttpLink ({
@@ -55,7 +55,7 @@ function App() {
             <Routes>
             <Route
                 path="/"
-                element={<WelcomePage />}
+                element={<Welcome />}
               />
               <Route
                 path="/homepage"

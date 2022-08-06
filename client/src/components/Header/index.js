@@ -5,11 +5,14 @@ import Auth from '../../utils/auth';
 import './Header.css';
 import Home from '../../pages/home/Home'
 import Profile from '../../pages/profile/Profile'
+import WorkoutEntryForm from '../WorkoutEntry';
+import FoodEntryForm from '../FoodEntryForm';
 
 const Header = () => {
     const logout = (event) => {
         event.preventDefault();
         Auth.logout();
+        window.location.href = '/'
     };
     return (
         <header>
@@ -20,28 +23,28 @@ const Header = () => {
                     </div>
                 </div>
                 <div className='selection-container'>
-                    { Auth.loggedIn() ? (
+                    {Auth.loggedIn() ? (
                         <>
                             <div className='selection-buttons'>
-                                <button className='update-status-button'>
-                                    Update Status
+                                <Link to='/food-entry-form'><button className='enter-food-button' onClick={FoodEntryForm}>
+                                    Enter Food Intake
                                 </button>
-                                <button className='scheule-workout-button'>
-                                    Schedule Workout
-                                </button>
+                                </Link>
 
-                                <button className="find-friends-button">
-                                    Find Friends
+                                <Link to='/workout-entry-form'><button className='enter-workout-button' onClick={WorkoutEntryForm}>
+                                    Enter Workout
                                 </button>
+                                </Link>
 
                                 <Link to="/me"><button className="view-profile-button" onClick={Profile}>
                                     View My Profile
                                 </button>
                                 </Link>
 
-                                <button className="edit-profile-button">
-                                    Edit Profile
+                                <Link to="/homepage"><button className="view-profile-button" onClick={Home}>
+                                    Home
                                 </button>
+                                </Link>
 
                                 <button className="logout-button" onClick={logout}>
                                     Logout
@@ -51,14 +54,16 @@ const Header = () => {
                         </>
                     ) : (
                         <>
-                            <Link to="/login"><button className="login-button">
-                                Login
-                            </button>
-                            </Link>
-                            <Link to="/signup"><button className="signup-button">
-                                Sign Up
-                            </button>
-                            </Link>
+                            <div className='welcome-page-buttons'>
+                                <Link to="/login"><button className="login-button">
+                                    Login
+                                </button>
+                                </Link>
+                                <Link to="/signup"><button className="signup-button">
+                                    Sign Up
+                                </button>
+                                </Link>
+                            </div>
                         </>
                     )}
                 </div>

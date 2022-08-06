@@ -1,33 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ProfileList.css";
+import avatar from "../../img/avatar.png";
+import calories from "../../img/calories.jpg";
+import workoutIcon from "../../img/workout-logo.png";
 
 const ProfileList = ({ profiles, title }) => {
   if (!profiles.length) {
-    return <h3>No Fit Friends Yet</h3>;
+    return <p>No Fit Friends Yet</p>;
   }
 
   return (
-    <div>
-      <h3 className="text-primary">{title}</h3>
-      <div className="flex-row justify-space-between my-4">
+    <div className="profile-feed-homepage-container">
+      <p className="text-primary">{title}</p>
+      <div className="profile-feed-container">
         {profiles &&
           profiles.map((profile) => (
-            <div key={profile._id} className="col-12 col-xl-6">
-              <div className="card mb-3">
-                <h4 className="card-header bg-dark text-light p-2 m-0">
-                  {profile.username} <br />
+            <div key={profile._id} className="col-12-col-xl-6">
+              <div className="profile-card">
+                <h2 className="card-header">
+                  {profile.username} </h2><br />
+                  <div className="card-info-wrapper">
                   <div className="workouts">
-                    <h2>Workouts</h2>
+                    <h4>Workouts</h4>
                       {profile.workouts.map((workout) => (
-                        <div>
+                        <div className='workout-format'>
                           <div>{workout.workoutText}</div>
                           <div>{workout.workoutTime}</div>
                         </div>
                       ))}
                   </div>
                     <div className="food-entries">
-                      <h2>Food Entries</h2>
+                      <h4>Food Entries</h4>
                       {profile.foodEntries.map((foodEntry) => (
                         <div>
                           <div>{foodEntry.foodType}</div>
@@ -35,15 +39,11 @@ const ProfileList = ({ profiles, title }) => {
                         </div>
                       ))}
                     </div>
+                    </div>
      
-                </h4>
+    
 
-                <Link
-                  className="btn btn-block btn-squared btn-light text-dark"
-                  to={`/profiles/${profile._id}`}
-                >
-                  View Profile
-                </Link>
+                
               </div>
             </div>
           ))}

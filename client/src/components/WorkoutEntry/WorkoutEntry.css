@@ -13,6 +13,12 @@
     background-color: black;
 }
 
+.workout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .food-entry-form input {
     display: flex;
     justify-content: center;
@@ -25,4 +31,17 @@
     margin-bottom: 20px;
     text-align: center;
     font-size: 40px;
+}
+
+.btn-submit-food-intake {
+    background-color: rgb(125, 249, 255);
+color: black;
+border: 3px rgb(125, 249, 255) solid;
+border-radius: 7px;
+height: 40px;
+width: 80px;
+font-size: 22px;
+margin-top: 30px;
+/* font-weight: bold; */
+margin-bottom: 10px;
 }

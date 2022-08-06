@@ -1,35 +1,22 @@
-
-
-.profile-container {
-    flex: 50%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.status-feed-container {
-    height: 500px;
-    background-color: black;
-}
-
-.status-feed {
-    color:white;
+.homepage-container {
+    height: 4000px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 200px
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    margin-top: -110px
 }
 
-/* footer {
-    background-color: rgb(125, 249, 255);
-    height: 60px;
+title {
+    color: #DFFF00
+}
+
+.homepage-content {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    /* border-bottom: solid rgb(125, 249, 255) 15px; */
-
-
-
-
-
+    flex-direction: row;
+}
 

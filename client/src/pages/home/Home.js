@@ -13,8 +13,8 @@ const Home = () => {
     const profiles = data?.profiles || [];
     return (
         <main>
-            <div className="flex-row justify-center">
-                <div className="col-12 col-md-10 my-3">
+            <div className="homepage-container">
+                <div className="homepage-content">
                     {loading ? (
                         <div>Loading Your Friends...</div>
                     ) : (
