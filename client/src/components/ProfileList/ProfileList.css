@@ -1,0 +1,78 @@
+.profile-feed-homepage-container {
+    background-color: black;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -150px
+   
+}
+
+.profile-feed-container {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-info-wrapper {
+    display: flex;
+    flex-direction: row;
+
+}
+
+    profile.username {
+        color: white
+    }
+
+    .card-header {
+        color: #DFFF00;
+        font: 25px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+       
+        
+    border-radius: 5px;
+    font-weight: bold;
+    align-items: center;
+    }
+
+.col-12-col-xl-6 {
+    background-color: rgb(125, 249, 255) ;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+    border-radius: 20px;
+    font-size: 20px;
+    
+    width: 250px;
+    color: black;
+    margin: 50px
+}
+
+
+.text-primary {
+    color: black;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+
+}
+
+
+.workouts {
+    margin-right: 50px;
+}
+
+.food-entries {
+margin-left: 50px;
+}

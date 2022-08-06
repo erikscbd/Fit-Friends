@@ -58,9 +58,12 @@ const Profile = () => {
         // )
 
     }
-    
-    const caloriesTotal = profile.foodEntries.reduce((a, c) => a + c.calories,0)
+
+    const caloriesTotal = profile.foodEntries.reduce((a, c) => a + c.calories, 0)
     const workoutMinutes = profile.workouts.reduce((a, c) => a + c.workoutTime, 0)
+    
+
+
     return (
         <div>
 
@@ -74,7 +77,7 @@ const Profile = () => {
 
 
                                 <h2 className="username"> {profile.username}
-                                    {profileId ? `${profile.name}'s` : 'Your'}
+
                                 </h2>
 
 
@@ -110,9 +113,7 @@ const Profile = () => {
                                         <CaloriesForm profileId={profile._id} /> */}
                                     </div>
                                 </div>
-                                <div className="calories-form" >
-                                    // Calories Form
-                                </div>
+
 
                             </div>
 
@@ -126,34 +127,18 @@ const Profile = () => {
                                     <img src={workoutIcon} alt="workout-icon" className="workout" />
                                     <div className='workout-description-list'>
                                         <div class='workout-list-items'> {workoutMinutes}
-                                            {/* {profile.workouts?.length > 0 && (
-                                                <WorkoutsList
-                                                    workouts={profile.workouts}
-                                                    isLoggedInUser={!profileId && true}
-                                                />
-                                            )}
-                                            <WorkoutsForm profileId={profile._id} /> */}
+
                                         </div>
                                     </div>
                                 </div>
-                                <div className='workouts-form'>
-                                    WorkoutsForm
-                                </div>
+
                             </div>
 
 
 
-                            <div className='workout-schedule-container'>
-                                <div className='workout-schedule-title'>
-                                    Workout Schedule:
-                                </div>
-                                <div className='workout-schedule-details'>
-                                    <div className='schedule-view-options'>
-                                        view by: day, week, month
 
-                                    </div>
-                                </div>
-                            </div>
+
+
                         </div>
 
                     </div>
@@ -162,11 +147,7 @@ const Profile = () => {
 
 
             </div>
-            <footer>
-                <div className='logo-image'>
-                    <img src={logo2} alt="fit friends logo" className='footer-logo' />
-                </div>
-            </footer>
+
         </div>
     );
 };

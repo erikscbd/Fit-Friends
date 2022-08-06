@@ -43,11 +43,7 @@ const Signup = () => {
 
   return (
     <main>
-      <div className="logo-top-container">
-        <div className="logo-image">
-          <img src={logo} alt="fit friends logo" className="ff-logo" />
-        </div>
-      </div>
+      
 
       <div className="sign-up-container">
         <form onSubmit={handleFormSubmit}
@@ -112,11 +108,7 @@ const Signup = () => {
           </div>
         </form>
       </div>
-      <footer>
-        <div className="logo-image">
-          <img src={logo2} alt="fit friends logo" className="footer-logo" />
-        </div>
-      </footer>
+     
     </main>
   );
 };

@@ -1,4 +1,16 @@
+.food-entry-container {
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    height: 800px
+}
 
+.food-entry-container {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
 .food-entry-form {
     border: solid rgb(125, 249, 255) 3px;
     border-radius: 20px;
@@ -11,6 +23,8 @@
     flex-wrap: wrap;
     font-size: 25px;
     background-color: black;
+    margin-top: -100px
+
 }
 
 .food-entry-form input {
@@ -22,7 +36,41 @@
 .food-entry-title {
     display: block;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 500px;
     text-align: center;
     font-size: 40px;
+}
+
+.calorie-count {
+    color: white
+}
+
+.food-type {
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 50px
+}
+
+input {
+   border: solid 3px rgb(125, 249, 255)
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-submit-food-intake {
+    background-color: rgb(125, 249, 255);
+color: black;
+border: 3px rgb(125, 249, 255) solid;
+border-radius: 7px;
+height: 40px;
+width: 80px;
+font-size: 22px;
+margin-top: 30px;
+/* font-weight: bold; */
+margin-bottom: 10px;
 }

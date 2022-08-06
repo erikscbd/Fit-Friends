@@ -11,7 +11,7 @@ const Footer = () => {
             <div className='footer-container'>
                 <div className='footer-items'>
 
-                    <div className="footer-go-back">
+                    {/* <div className="footer-go-back">
                         {location.pathname !== '/' && (
                             <button
                                 className="go-back-button"
@@ -20,7 +20,7 @@ const Footer = () => {
                                 &larr; Go Back
                             </button>
                         )}
-                    </div>
+                    </div> */}
 
                     <div className='logo-image'>
                         <img src={logo2} alt="fit friends logo" className='footer-logo' />

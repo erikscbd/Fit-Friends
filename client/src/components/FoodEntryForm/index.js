@@ -34,15 +34,17 @@ const FoodEntryForm = ({ profileId }) => {
 
   return (
     <div className="food-entry-container">
-      <h4>Keep track of your food intake by entering items below</h4>
+      
 
       {Auth.loggedIn() ? (
+        // <div className="food-entry-container">
         <form
           className="flex-row justify-center justify-space-between-md align-center food-entry-form"
           onSubmit={handleFormSubmit}
         >
+          
           <div className="food-entry-title">Food Entry</div>
-          <div className="food-type">
+          <div className="food-type">Food Type
             <input
               type="text"
               placeholder="Enter food item"
@@ -53,7 +55,7 @@ const FoodEntryForm = ({ profileId }) => {
               }
             />
           </div>
-          <div className="calorie-count">
+          <div className="calorie-count">Calories 
             <input
               type="text"
               placeholder="Enter calorie count"
@@ -67,7 +69,7 @@ const FoodEntryForm = ({ profileId }) => {
           </div>
 
           <div className="submit-food-intake">
-            <button className="btn submit-food-intake" type="submit">
+            <button className="btn-submit-food-intake" type="submit">
               Submit
             </button>
           </div>
@@ -77,6 +79,7 @@ const FoodEntryForm = ({ profileId }) => {
             </div>
           )}
         </form>
+        
       ) : (
         <p>
           You need to be logged in to enter your food intake. Please{" "}
